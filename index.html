@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hearth Cloud: made-to-order food, delivered</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="bar">
+    <a class="brand" href="index.html">Hearth Cloud Kitchen</a>
+    <nav>
+      <a href="kitchen.html">Kitchen board</a>
+      <button id="openCart" class="btn ghost" type="button">Cart <span id="count" class="badge">0</span></button>
+    </nav>
+  </header>
+
+  <div class="slide active"
+             style="--bg: url('https://images.unsplash.com/photo-1668236543090-82eba5ee5976?auto=format&fit=crop&w=3840&q=90')">
+            <div class="hero-content">
+                <p class="tagline">Authentic Taste</p>
+                <h1>South Indian<br>Delights</h1>
+                <p>Crispy Dosas | Soft Idlis | Spicy Chutneys</p>
+                <a href="#south" class="explore-btn">Explore Menu →</a>
+            </div>
+        </div>
+
+        <div class="slide"
+             style="--bg: url('https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=3840&q=90')">
+            <div class="hero-content">
+                <p class="tagline">Rich & Delicious</p>
+                <h1>North Indian<br>Specials</h1>
+                <p>Paneer | Butter Masala | Fresh Naan</p>
+                <a href="#north" class="explore-btn">Explore Menu →</a>
+            </div>
+        </div>
+
+        <div class="slide"
+             style="--bg: url('https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=3840&q=90')">
+            <div class="hero-content">
+                <p class="tagline">Made With Love</p>
+                <h1>Delicious Food<br>Every Day</h1>
+                <p>Fresh Ingredients | Amazing Flavors</p>
+                <a href="#special" class="explore-btn">Order Your Food →</a>
+            </div>
+        </div>
+
+        <button class="slider-arrow prev" onclick="changeSlide(-1)">❮</button>
+        <button class="slider-arrow next" onclick="changeSlide(1)">❯</button>
+
+        <div class="dots">
+            <button class="dot active" onclick="showSlide(0)"></button>
+            <button class="dot" onclick="showSlide(1)"></button>
+            <button class="dot" onclick="showSlide(2)"></button>
+        </div>
+    </section>
+
+    <!-- Special Dishes -->
+    <section class="food-section" id="special">
+        <h2>Our Special Dishes</h2>
+        <p class="section-desc">Taste the best of Indian cuisine</p>
+
+        <div class="food-grid">
+
+            <div class="food-card">
+                <div class="food-image">
+                    <img src="https://images.unsplash.com/photo-1668236543090-82eba5ee5976?auto=format&fit=crop&w=1200&q=90" alt="Masala Dosa">
+                </div>
+                <div class="food-info">
+                    <h3>Masala Dosa</h3>
+                    <p>Crispy and spicy South Indian dosa</p>
+                    <div class="price-row">
+                        <span>₹120</span>
+                        <button onclick="addToCart('Masala Dosa',120)">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="food-card">
+                <div class="food-image">
+                    <img src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=1200&q=90" alt="Idli Sambar">
+                </div>
+                <div class="food-info">
+                    <h3>Idli Sambar</h3>
+                    <p>Soft idlis with hot sambar</p>
+                    <div class="price-row">
+                        <span>₹80</span>
+                        <button onclick="addToCart('Idli Sambar',80)">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="food-card">
+                <div class="food-image">
+                    <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=1200&q=90" alt="Paneer Curry">
+                </div>
+                <div class="food-info">
+                    <h3>Paneer Butter Masala</h3>
+                    <p>Rich creamy North Indian curry</p>
+                    <div class="price-row">
+                        <span>₹220</span>
+                        <button onclick="addToCart('Paneer Butter Masala',220)">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="food-card">
+                <div class="food-image">
+                    <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=1200&q=90" alt="Indian curry">
+                </div>
+                <div class="food-info">
+                    <h3>Indian Special Curry</h3>
+                    <p>Traditional spices and rich flavors</p>
+                    <div class="price-row">
+                        <span>₹180</span>
+                        <button onclick="addToCart('Indian Special Curry',180)">+</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- South Indian Showcase -->
+    <section class="category-banner" id="south">
+        <div>
+            <h2>South Indian Cuisine</h2>
+            <p>Experience the traditional flavors of South India.</p>
+            <a href="kitchen.html">View Dishes →</a>
+        </div>
+    </section>
+
+    <!-- North Indian Showcase -->
+    <section class="category-banner north-banner" id="north">
+        <div>
+            <h2>North Indian Cuisine</h2>
+            <p>Enjoy rich curries, delicious breads and more.</p>
+            <a href="kitchen.html">View Dishes →</a>
+        </div>
+    </section>
+
+    <!-- Cart -->
+    <section class="cart-section">
+        <h2>🛒 Your Cart</h2>
+        <div id="cart-items">Your cart is empty.</div>
+        <h3 id="total">Total: ₹0</h3>
+        <button class="clear-btn" onclick="clearCart()">Clear Cart</button>
+    </section>
+    <div class="grid" id="grid"></div>
+  </main>
+
+
+    <section id="basketView">
+      <p class="muted" id="buyNote" hidden>You are buying this dish on its own. Your cart is untouched.</p>
+      <div id="cartBody"></div>
+      <form id="checkout" hidden>
+        <label>Name<input name="name" autocomplete="name" required></label>
+        <label>Phone<input name="phone" type="tel" autocomplete="tel" placeholder="10-digit number" required></label>
+        <label>Delivery address<textarea name="address" rows="3" autocomplete="street-address" required></textarea></label>
+        <p id="formError" class="error" role="alert"></p>
+        <button class="btn primary wide" type="submit">Place order</button>
+      </form>
+    </section>
+
+  <section class="hero">
+    <h1>Cooked in one kitchen,<br>brought to your door.</h1>
+    <p>A short menu, made to order and delivered in about 35 minutes. Open every day, 11 am to 11 pm.</p>
+  </section>
+
+  <main class="wrap">
+    <div class="tabs" id="tabs" role="tablist" aria-label="Menu categories"></div>
+    <div class="scrim" id="scrim"></div>
+  <aside class="drawer" id="drawer" aria-label="Cart and order tracking">
+    <div class="drawer-head">
+      <h2 id="drawerTitle">Your cart</h2>
+      <button id="closeCart" class="btn ghost" type="button">Close</button>
+    </div>
+
+    <section id="trackView" hidden>
+      <p class="muted" id="trackTitle"></p>
+      <ol class="steps" id="steps"></ol>
+      <div id="trackItems" class="muted"></div>
+      <button id="newOrder" class="btn ghost wide" type="button">Start a new order</button>
+    </section>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
+
+<script>
+  // Automatic slider
+        let currentSlide = 0;
+        const slides = document.querySelectorAll(".slide");
+        const dots = document.querySelectorAll(".dot");
+        let slideTimer;
+
+        function showSlide(index) {
+            slides[currentSlide].classList.remove("active");
+            dots[currentSlide].classList.remove("active");
+
+            currentSlide = (index + slides.length) % slides.length;
+
+            slides[currentSlide].classList.add("active");
+            dots[currentSlide].classList.add("active");
+
+            resetTimer();
+        }
+
+        function changeSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
+
+        function resetTimer() {
+            clearInterval(slideTimer);
+            slideTimer = setInterval(() => {
+                showSlide(currentSlide + 1);
+            }, 5000);
+        }
+
+        resetTimer();
+
+        // Simple shopping cart
+        let cart = [];
+
+        function addToCart(name, price) {
+            cart.push({name, price});
+            displayCart();
+        }
+
+        function displayCart() {
+            const cartItems = document.getElementById("cart-items");
+            let total = 0;
+            cartItems.innerHTML = "";
+
+            if (cart.length === 0) {
+                cartItems.textContent = "Your cart is empty.";
+            }
+
+            cart.forEach((item, index) => {
+                total += item.price;
+
+                const row = document.createElement("div");
+                row.className = "cart-item";
+
+                const label = document.createElement("span");
+                label.textContent = item.name + " - ₹" + item.price;
+
+                const remove = document.createElement("button");
+                remove.textContent = "Remove";
+                remove.onclick = () => {
+                    cart.splice(index, 1);
+                    displayCart();
+                };
+
+                row.append(label, remove);
+                cartItems.appendChild(row);
+            });
+
+            document.getElementById("total").textContent =
+                "Total: ₹" + total;
+        }
+
+        function clearCart() {
+            cart = [];
+            displayCart();
+        }
+    </script>
+</script>
